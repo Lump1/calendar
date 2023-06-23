@@ -9,10 +9,10 @@ import calendar from 'calendar-month-array';
 function App() {
 
   const [dateTime, setDateTime] = useState(new Date());
-  const [daysArray, setDaysArray] = useState(calendar(new Date(dateTime.getFullYear(), dateTime.getMonth()), { 
+  const [daysArray, setDaysArray] = useState(calendar(new Date(dateTime.getFullYear(), dateTime.getMonth()), {
     weekStartDay: 1,
     formatDate: date => date.getDate(),
-    formatSiblingMonthDate: () => ' '
+    formatSiblingMonthDate: date => ""
   }));
 
   console.log(daysArray);
@@ -25,17 +25,17 @@ function App() {
         </div>
 
         <div className='calendar'>
-        {
-          daysArray.map(
-            x => x.map(
-              y => {
-                y != ' ' ? console.log(y) : <></>;
-
-              }
+          <h1>{new Date().toLocaleString('en', { month: 'long' })}</h1>
+          <div className='calendar-contents'>
+            {
+              daysArray.map(
+                x => x.map(
+                  y => y != "" ? <Data day={y} month={dateTime.getMonth()} year={dateTime.getFullYear()} /> : <div className='container-empty'></div>
                 ))
-        }
+            }
+          </div>
         </div>
-        
+
       </main>
     </div>
   );

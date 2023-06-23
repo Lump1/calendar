@@ -5,21 +5,30 @@ main {
  height: 100vh;
  
  display: flex;
+ flex-direction: row;
 }
 
 .calendar {
   width: 70%;
-  height: 100%;
+  height: 80%;
 
-  margin-left: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar h1 {
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+.calendar-contents {
+  width: 80%;
+  height: 100%;
 
   display: flex;
   flex-wrap: wrap;
-
-  float: right;
-
-  justify-content: left;
-  align-items: baseline;
 }
 
 .menu {
@@ -33,14 +42,39 @@ main {
   width: 30px;
   height: 30px;
 
-  background-color: rgb(166, 236, 245);
-  border-radius: 50%;
+  text-align: center;
+
+  flex-basis: calc(100% / 7);
+  
+}
+
+.date-wrapper {
+  display: flex;
 
   justify-content: center;
   align-items: center;
 
-  text-align: center;
-  
+  background-color: rgb(166, 236, 245);
+  border-radius: 50%;
+
+  width: 50px;
+  height: 50px;
+
+  transition: all .3s ease-in-out;
+}
+
+.date-wrapper:hover {
+  background-color: rgb(116, 171, 179);
+  cursor: pointer;
+}
+
+.container-empty {
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+
+  flex-basis: calc(100% / 7);
+
 }
 
 .date-text {
