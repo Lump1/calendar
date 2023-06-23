@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+
+
+main {
+ width: 100vw;
+ height: 100vh;
+ 
+ display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.calendar {
+  width: 70%;
+  height: 100%;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+  margin-left: 25%;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+
+  float: right;
+
+  justify-content: left;
+  align-items: baseline;
+}
+
+.menu {
+  height: 100%;
+  width: 30%;
+
+  background-color: aliceblue;
+}
+
+.container-date {
+  width: 30px;
+  height: 30px;
+
+  background-color: rgb(166, 236, 245);
+  border-radius: 50%;
+
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
+  text-align: center;
+  
 }
 
-.App-link {
-  color: #61dafb;
+.date-text {
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.button-div {
+  display: flex;
+  margin: 10px;
+}
+
+.day, .month, .year {
+  font-size: 32px;
+  margin: 20px;
+}
+
+.date-menu {
+  margin: 10px;
+  font-size: 55px;
+}
+
+.m-10 {
+  margin: 10px;
 }

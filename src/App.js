@@ -1,23 +1,42 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Data from './components/data/data';
+import Menu from './components/menu/menu';
+import calendar from 'calendar-month-array';
+
+
 
 function App() {
+
+  const [dateTime, setDateTime] = useState(new Date());
+  const [daysArray, setDaysArray] = useState(calendar(new Date(dateTime.getFullYear(), dateTime.getMonth()), { 
+    weekStartDay: 1,
+    formatDate: date => date.getDate(),
+    formatSiblingMonthDate: () => ' '
+  }));
+
+  console.log(daysArray);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <main>
+        <div className='menu'>
+          <Menu date={dateTime}></Menu>
+        </div>
+
+        <div className='calendar'>
+        {
+          daysArray.map(
+            x => x.map(
+              y => {
+                y != ' ' ? console.log(y) : <></>;
+
+              }
+                ))
+        }
+        </div>
+        
+      </main>
     </div>
   );
 }
