@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import calendar from "calendar-month-array";
 
-//TODO Check if month in range 0-11
+//TODO IDK why, but this doesn't work if user decreases month first
 
 const dateReducer = createSlice({
   name: "calendar-month",
@@ -19,7 +19,7 @@ const dateReducer = createSlice({
   },
   reducers: {
     incrementMonth: (state) => {
-      if (state.month == 11) {
+      if (state.month === 11) {
         state.month = 0;
         state.year += 1;
         console.log('odfsdfsdf');
@@ -34,14 +34,13 @@ const dateReducer = createSlice({
       state.monthName = state.monthArray[state.month];
     },
     decrementMonth: (state) => {
-      if (state.month == 0) {
+      if (state.month === 0) {
         state.month = 11;
         state.year -= 1;
         console.log('odfsdfsdf');
       } else {
         state.month -= 1;
       }
-      state.month -= 1;
       state.daysOfMonth = calendar(new Date(new Date().getFullYear(), state.month), {
         weekStartDay: 1,
         formatDate: (date) => date.getDate(),
@@ -58,7 +57,7 @@ const dateReducer = createSlice({
       });
     },
     decrementYear: (state) => {
-      state.year += 1;
+      state.year -= 1;
       state.daysOfMonth = calendar(new Date(new Date().getFullYear(), state.month), {
         weekStartDay: 1,
         formatDate: (date) => date.getDate(),
