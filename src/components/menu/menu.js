@@ -2,23 +2,29 @@ import React from 'react';
 import './menu.module.css';
 
 import {useDispatch, useSelector} from 'react-redux';
-import {incrementMonth, decrementMonth} from "../../redux/reducers/calendarMonthReducer";
+import {incrementMonth, decrementMonth} from "../../redux/reducers/dateReducer";
 
 export default function Menu(props) {
   const day = useSelector((state) => state.date.value);
   const month = useSelector((state) => state.month.monthName);
+  const year = useSelector((state) => state.month.year);
 
   const dispatch = useDispatch();
 
-  const prevMonth = () => dispatch(decrementMonth());
-  const nextMonth = () => dispatch(incrementMonth());
+  const prevMonth = () => {
+    dispatch(decrementMonth());
+  }
+
+  const nextMonth = () => {
+    dispatch(incrementMonth());
+  }
     
   return (
     <div className='menu-container'>
         <h2 className='date-menu'>Date: </h2>
         <p className='day'>Day: {day}</p>
         <p className='month'>Month: {month}</p>
-        <p className='year'>Year: {props.date.getFullYear()}</p>
+        <p className='year'>Year: {year}</p>
         
         <h2 className='m-10'>Month</h2>
         <div className='button-div'>
