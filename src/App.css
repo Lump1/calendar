@@ -35,12 +35,14 @@ main {
   height: 100%;
   width: 30%;
 
-  background-color: aliceblue;
+  background: rgb(65,190,173);
+  background: linear-gradient(24deg, rgba(65,190,173,0.7175245098039216) 0%, rgba(203,255,231,0.8743872549019608) 28%, rgba(115,255,147,0.47102591036414565) 61%, rgba(199,255,166,0.865983893557423) 100%);
 }
 
 .container-date {
   width: 30px;
   height: 30px;
+  
 
   text-align: center;
 
@@ -57,19 +59,74 @@ main {
   background-color: rgb(166, 236, 245);
   border-radius: 50%;
 
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 
-  transition: all .3s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
 .date-wrapper:hover {
-  background-color: rgb(116, 171, 179);
+  background-color: rgba(97, 235, 253, 0.911);
+
+  box-shadow: -1px 5px 30px 7px rgba(168, 255, 255, 0.678);
+
+  width: 75px;
+  height: 75px;
+
+  cursor: pointer;
+}
+
+.date-wrapper:active {
+  background-color: rgba(22, 228, 255, 0.822);
+
+  box-shadow: -1px 5px 30px 7px rgba(113, 255, 255, 0.801);
+
+  cursor: pointer;
+}
+
+.btn-arrow {
+  background-color: rgb(140, 255, 217);
+
+  font-size: 32px;
+
+  width: 35%;
+  height: 40px;
+
+  text-align: center;
+  vertical-align: middle;
+  
+  margin-left: 20px;
+  color: black;
+  
+  border-radius: 10%;
+
+  border: 1px #75f3c9a4 solid;
+
+  transition: all .2s ease-in-out;
+}
+
+.btn-arrow:hover {
+  background-color: rgba(95, 255, 202, 0.932);
+
+  box-shadow: -1px 5px 30px 7px rgba(215, 255, 211, 0.637);
+
+  width: 37%;
+  height: 40px;
+
+  cursor: pointer;
+}
+
+.btn-arrow:active {
+  background-color: rgba(81, 255, 188, 0.76);
+
+  box-shadow: -1px 5px 30px 7px rgba(156, 255, 181, 0.658);
+
   cursor: pointer;
 }
 
 .container-empty {
   background-color: transparent;
+
   width: 30px;
   height: 30px;
 
@@ -78,6 +135,7 @@ main {
 }
 
 .date-text {
+  font-size: 100%;
   margin: auto;
 }
 
@@ -87,13 +145,25 @@ main {
 }
 
 .day, .month, .year {
-  font-size: 32px;
+  font-size: 24px;
   margin: 20px;
 }
 
 .date-menu {
   margin: 10px;
   font-size: 55px;
+}
+
+.options-text {
+  margin: 20px;
+  margin-top: 35px;
+  margin-left: 50px;
+  font-size: 32px;
+}
+
+.menu-hr {
+  border-top: 2px solid black;
+  
 }
 
 .m-10 {
