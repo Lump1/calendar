@@ -22,14 +22,23 @@ export default function Menu(props) {
   return (
     <div className='menu-container'>
         <h2 className='date-menu'>Date: </h2>
+        <hr className='menu-hr' />
         <p className='day'>Day: {day}</p>
         <p className='month'>Month: {month}</p>
         <p className='year'>Year: {year}</p>
+
+        <hr className='menu-hr' />
         
-        <h2 className='m-10'>Month</h2>
+        <h2 className='options-text'>Month</h2>
         <div className='button-div'>
-            <button onClick={prevMonth}>←</button>
-            <button onClick={nextMonth}>→</button>
+            <button className='btn-arrow'>←</button>
+            <button className='btn-arrow'>→</button>
+        </div>
+
+        <h2 className='options-text'>Year</h2>
+        <div className='button-div'>
+            <button className='btn-arrow' onClick={prevMonth}>←</button>
+            <button className='btn-arrow' onClick={nextMonth}>→</button>
         </div>
         
     </div>
